@@ -7,7 +7,8 @@ import Samples.Picture as PIC
 runSample :: String -> IO()
 runSample "play" = PLAY.run
 runSample "blank" = PIC.run BlankType
-runSample "polygon" = PIC.run PolygonType 
+runSample "polygon" = PIC.run PolygonType
+runSample "rectangle" = PIC.run RectangleType 
 runSample _ = putStrLn "No Sample."
 
 main :: IO ()

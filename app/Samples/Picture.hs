@@ -2,7 +2,7 @@ module Samples.Picture where
 
 import Graphics.Gloss
 
-data PictureType = BlankType | PolygonType
+data PictureType = BlankType | PolygonType | RectangleType
 
 window :: Display
 window = InWindow "Hello World" (640,480) (100,100)
@@ -10,6 +10,7 @@ window = InWindow "Hello World" (640,480) (100,100)
 picture :: PictureType -> Picture
 picture BlankType = blank
 picture PolygonType = color black $ polygon [(0, 150), (150, 50), (100, -100), (-100, -100), (-150, 50)]
+picture RectangleType = rectangleSolid 200 150
 
 run :: PictureType -> IO()
 run pictureType = display window white $ picture pictureType
