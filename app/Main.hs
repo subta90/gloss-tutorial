@@ -1,22 +1,21 @@
 module Main where
 
 import System.Environment (getArgs)
-import Samples.Play as P
-import Samples.Blank as B
+import Samples.Play as PLAY
+import Samples.Picture as PIC
+
+runSample :: String -> IO()
+runSample "play" = PLAY.run
+runSample "blank" = PIC.run BlankType
+runSample "polygon" = PIC.run PolygonType 
+runSample _ = putStrLn "No Sample."
 
 main :: IO ()
 main = do
     args <- getArgs
-    if length args /= 1
+    if length args < 1
         then
-            putStrLn "Invalid Arguments."
+            putStrLn "No Arguments."
     else do
-        let firstArg = args !! 0
-        if firstArg == "play"
-            then 
-                P.run
-        else if firstArg == "blank"
-            then
-                B.run
-        else
-            putStrLn "No Sample."
+        let sampleType = args !! 0
+        runSample sampleType
