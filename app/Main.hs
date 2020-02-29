@@ -10,6 +10,7 @@ runSample "blank" = PIC.run BlankType
 runSample "polygon" = PIC.run PolygonType
 runSample "rectangle" = PIC.run RectangleType
 runSample "line" = PIC.run LineType
+runSample "circle" = PIC.run CircleType
 runSample _ = putStrLn "No Sample."
 
 main :: IO ()
