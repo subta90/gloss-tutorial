@@ -8,7 +8,8 @@ runSample :: String -> IO()
 runSample "play" = PLAY.run
 runSample "blank" = PIC.run BlankType
 runSample "polygon" = PIC.run PolygonType
-runSample "rectangle" = PIC.run RectangleType 
+runSample "rectangle" = PIC.run RectangleType
+runSample "line" = PIC.run LineType
 runSample _ = putStrLn "No Sample."
 
 main :: IO ()
