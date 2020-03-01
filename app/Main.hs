@@ -3,6 +3,7 @@ module Main where
 import System.Environment (getArgs)
 import Samples.Play as PLAY
 import Samples.Picture as PIC
+import Samples.Image as IMG
 
 runSample :: String -> IO()
 runSample "play" = PLAY.run
@@ -11,6 +12,7 @@ runSample "polygon" = PIC.run PolygonType
 runSample "rectangle" = PIC.run RectangleType
 runSample "line" = PIC.run LineType
 runSample "circle" = PIC.run CircleType
+runSample "image" = IMG.run
 runSample _ = putStrLn "No Sample."
 
 main :: IO ()
