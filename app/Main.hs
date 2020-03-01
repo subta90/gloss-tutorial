@@ -4,6 +4,7 @@ import System.Environment (getArgs)
 import Samples.Play as PLAY
 import Samples.Picture as PIC
 import Samples.Image as IMG
+import Samples.Board as BOARD
 
 runSample :: String -> IO()
 runSample "play" = PLAY.run
@@ -13,6 +14,7 @@ runSample "rectangle" = PIC.run RectangleType
 runSample "line" = PIC.run LineType
 runSample "circle" = PIC.run CircleType
 runSample "image" = IMG.run
+runSample "board" = BOARD.draw
 runSample _ = putStrLn "No Sample."
 
 main :: IO ()
